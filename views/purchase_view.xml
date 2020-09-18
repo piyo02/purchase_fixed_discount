@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Eficent Business and IT Consulting Services S.L.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="view_po_form" model="ir.ui.view">
+        <field name="name">purchase.order.fixed.discount.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase_discount.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/form//field[@name='discount']"
+                   position="before">
+                <field name="discount_fixed"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='discount']"
+                   position="before">
+                <field name="discount_fixed"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
